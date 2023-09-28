@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uplaod</title>
+</head>
+<body>
+    <h1>upload progress</h1>
+    <form method="post" enctype="multipart/form-data" action="http://localhost:3000/upload">
+        <div>
+          <label for="file">选择要上传的文件</label>
+          <input type="file" id="file" name="file" multiple />
+        </div>
+        <div>
+          <button>提交</button>
+        </div>
+      </form>      
+</body>
+</html>
