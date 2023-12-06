@@ -4,10 +4,10 @@ let cLog = require('../cLog')
 
 const pool = mysql.createPool({
     //host: "172.31.43.1",
-    host: "192.168.109.101",
+    //host: "192.168.109.101",
     user: "HcDB",
     password: "Huachang@999!",
-    //host: "localhost",
+    host: "localhost",
     //user: "HcData",
     //password: "Huachang@456!",
     database: "hc_kly_db"
