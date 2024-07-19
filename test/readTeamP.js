@@ -2,7 +2,7 @@ const axios = require('axios');
 const { outPut } = require("../service/cLog");
 const mysql = require("../service/db/mysql");
 
-let access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiYWRtaW5Aa2xlLmNvbSJ9LCJpYXQiOjE2OTgwMjg2OTAsImV4cCI6MTY5ODAzOTQ5MH0.m5jNjsRRqkZjVw6v-nHAzGgt9bvOuiuk1Aip313bCus';
+let access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiYWRtaW5Aa2xlLmNvbSJ9LCJpYXQiOjE3MDA0NDcwMzEsImV4cCI6MTcwMDQ1NzgzMX0.kmmdm0Drpbh67N1FDEZaI4sP3Rs1A86KYnYNhCmNSHA';
 
 axios.defaults.headers.common['Authorization'] = `Bearer ${access_token}`;
 
@@ -25,7 +25,7 @@ const getTeamP = async (id, address) => {
 }
 
 const getAllUser = async () => {
-    let sqlNameList = `select id, wallet_address from user_info;`;
+    let sqlNameList = `select id, wallet_address, balance from user_info where level >= 2 and enter_Level > 2`;
 
     let data2 = await mysql.query(sqlNameList);
     let jsonData2 = JSON.parse(JSON.stringify(data2));
